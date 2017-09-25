@@ -4,7 +4,7 @@ import sys
 import os
 from threading import Timer
 from Board import Board
-from Wall import walls
+from Wall import Walls
 from Brick import Brick
 from Bomber import bomberman
 from Bomb import Bomb
@@ -49,7 +49,7 @@ class Main:
 
     def init(self, board):
         board.border()
-        Wall = walls(board)
+        Wall = Walls(board)
         bomber = bomberman()
         bomber.position(board)
         brick = Brick(board)
@@ -64,7 +64,7 @@ class Main:
             self.time += 1
             self.__check(board, bomb, bomber)
             board.border()
-            Wall = walls(board)
+            Wall = Walls(board)
             val = self.__getchar()
             if val == 'q':
                 print("\n")
